@@ -1,0 +1,314 @@
+.accounts {
+  width: 95%;
+  margin: 20px auto;
+  position: relative;
+}
+
+.hdracc {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.bckscc {
+  color: #fff;
+  padding: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-right: 1rem;
+}
+.bckscc i{
+    line-height: 0;
+}
+
+.hdracc h1 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.mnacc {
+  width: 100%;
+  display: grid;
+  gap: 15px;
+  margin: 20px auto;
+}
+
+.itacc {
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+
+/* nth-child para grid posicionamiento */
+.itacc:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+.itacc:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+.itacc:nth-child(3) {
+  grid-column: 2 / span;
+  grid-row: 1;
+}
+.itacc:nth-child(4) {
+  grid-column: 2 / span;
+  grid-row: 1;
+}
+.itacc:nth-child(5) {
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 2;
+}
+.itacc:nth-child(6) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Estilos para el sexto itacc */
+.itacc:nth-child(6) .dtls {
+  justify-content: space-between;
+}
+.itacc:nth-child(6) .dtls button {
+  width: 50%;
+  border: 1px solid #aaa;
+  margin: 0 5px;
+}
+.itacc:nth-child(6) .dtls button span i {
+  color: transparent;
+  background-image: linear-gradient(135deg, #00defb 0%, #005bea 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.itacc h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dtls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px 0;
+}
+
+.dtls-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.dtls-img img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: top;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dtls button {
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  display: inline-flex;
+  border-radius: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.dtls button:hover {
+  background-color: #f3f3f3;
+}
+
+.dtls button span i {
+  color: #000;
+  margin-right: 5px;
+  font-size: 1.125rem;
+  border: 1px solid #000;
+  padding: 5px;
+  transition: 0.3s ease-in-out all;
+  background: transparent;
+  border-radius: 50%;
+}
+
+/* Logo Microsoft */
+.itacc:nth-child(2) .dtls button:hover span i {
+  color: transparent;
+  background-image: linear-gradient(135deg, #00defb 0%, #005bea 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.itacc:nth-child(4) .dtls button:hover span i {
+  color: #bf930d;
+}
+
+.subcap {
+  text-align: left;
+}
+
+.subcap p:nth-child(1) {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.subcap p:nth-child(2) {
+  font-size: 0.625rem;
+  color: #aaa;
+}
+
+.cap-acc {
+  margin-left: 10px;
+}
+
+.cap-acc h2 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #000;
+}
+
+.cap-acc p {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.cap-acc a {
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #aaa;
+  display: block;
+}
+
+.cap-acc a:hover {
+  text-decoration: underline;
+}
+
+.social {
+  margin: 5px 0;
+}
+
+.social h3 {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.social p {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.social a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-size: 1.25rem;
+  color: #aaa;
+  border: 1px solid #aaa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.social button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.social button span i {
+  font-size: 1.25rem;
+}
+
+.social button .rctact {
+  text-align: left;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+.social button .rctact p:nth-child(1) {
+  font-weight: 500;
+  color: #000;
+}
+
+.dtls-mo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.dtls-mo button {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  margin: 5px 0;
+  border: 1px solid #aaa;
+}
+
+.dtls-mo button:hover {
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.dtls-mo button span i {
+  margin-right: 15px;
+  font-size: 1.125rem;
+  border: 1px solid #000;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.dtls-mo button .subcap {
+  text-align: left;
+}
+
+.dtls-mo button .subcap p:nth-child(1) {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.dtls-mo button .subcap p:nth-child(2) {
+  font-size: 0.625rem;
+  color: #aaa;
+}
