@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import type { Route } from "./+types/home";
-import { Navigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 
 
 export function meta({}: Route.MetaArgs) {
@@ -10,5 +11,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function home() {
-  return <Navigate to={"/login"} replace />;
+
+  const nav = useNavigate();
+
+  useEffect(() => {
+    nav("/login", {replace: true})
+  }, [])
+  
+  return null;
 }

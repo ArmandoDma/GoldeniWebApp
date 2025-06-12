@@ -1,4 +1,4 @@
-import Carousel from "~/Components/Carousel";
+import Portal from "~/Views/Portal";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -11,7 +11,7 @@ export function meta({}: Route.MetaArgs) {
 export default function StudentsPortal () {
   return (
     <>
-    <Carousel />
+    <Portal />
     </>
   )
 }

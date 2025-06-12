@@ -1,11 +1,9 @@
 .carousel {
-    padding: 20px 0;
     position: relative;
-    width: 95%;
+    width: 100%;
     max-width: 100%;
     margin: auto;
     overflow: hidden;
-    border-radius: 12px;
 }
 
 .slider {
@@ -24,7 +22,6 @@
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border-radius: 12px;
     vertical-align: top;
 }
 

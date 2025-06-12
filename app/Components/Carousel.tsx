@@ -17,7 +17,7 @@ const slides = [
     tag: "Social",
   },
   {
-    image: "https://plus.unsplash.com/premium_photo-1703701579660-8481915a7991?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1588581939864-064d42ace7cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Library #1",
     text: "La mejor biblioteca del mundo a tu disposición.",
     tag: "Students",
@@ -60,7 +60,7 @@ const Carousel = () => {
               <span>{slide.tag}</span>
               <h1>{slide.title}</h1>
               <p>{slide.text}</p>
-              <Link to="/">
+              <Link to="/students/portal">
                 Read More <i className="bx bxs-chevron-right"><IconChevronRight size={20} color="#000" /></i>
               </Link>
             </div>
