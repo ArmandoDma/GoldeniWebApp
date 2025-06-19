@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import styles from "../modules/Carousel.module.css";
 import { IconChevronRight } from "@tabler/icons-react";
 import { Link, useLocation } from "react-router"; 
-import { slidesByRoute } from "~/data/slides";
+import { slidesByRoute } from '~/data/slides';
 
 const Carousel = () => {
   const location = useLocation();
   const pathname = location.pathname;
 
-  const slides = slidesByRoute[pathname] || [];
+  const slides = slidesByRoute[pathname as keyof typeof slidesByRoute] || [];
 
   const [currentSlide, setCurrentSlide] = useState(-1);
   const slideDuration = 5000;
@@ -40,7 +40,7 @@ const Carousel = () => {
         className={styles.slider}
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
-        {slides.map((slide, index) => (
+        {slides.map((slide:any, index:any) => (
           <div className={styles.slide} key={index}>
             <img
               src={slide.image}
@@ -66,7 +66,7 @@ const Carousel = () => {
         ))}
       </div>
       <div className={styles.indicators}>
-        {slides.map((_, index) => (
+        {slides.map((_:any, index:any) => (
           <span
             key={index}
             className={`${styles.indicator} ${

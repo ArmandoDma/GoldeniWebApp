@@ -8,13 +8,13 @@ export default [
     layout("./Views/LayoutViews.tsx", [        
         //students routes
         route("students/portal", "routes/studentsPortal.tsx"),
-        route("students/courses","views/Courses.tsx"),
-        route("students/grades", "views/Grades.tsx"),
-        route("students/schedule", "views/Schedule.tsx"),
-        route("students/workshops","views/Workshops.tsx"),
-        route("students/events", "views/Eventos.tsx"),
-        route("students/attend", "views/Attend.tsx"),
-        route("students/profile", "views/profile/Profile.tsx"),
+        route("students/courses","views/Alumn/Courses.tsx"),
+        route("students/grades", "views/Alumn/Grades.tsx"),
+        route("students/schedule", "views/Alumn/Schedule.tsx"),
+        route("students/workshops","views/Alumn/Workshops.tsx"),
+        route("students/events", "views/Alumn/Eventos.tsx"),
+        route("students/attend", "views/Alumn/Attend.tsx"),
+        route("students/profile", "views/Alumn/Profile.tsx"),
 
         route("teachers/portal", "routes/teachersPortal.tsx"),
     ])

@@ -1,5 +1,5 @@
 import Carousel from "~/Components/Carousel"
-import styles from "../modules/Portal.module.css"
+import styles from "../../modules/Portal.module.css"
 
 
 const Portal = () => {

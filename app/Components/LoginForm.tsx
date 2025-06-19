@@ -75,7 +75,6 @@ export const LoginForm = () => {
                 type="submit"
                 value="Sign In"
                 role="button"
-                aria-hidden="true"
               />
               <div className={styles.frgtlinks}>
                 <a href="#forgot-password">forgot your password?</a>

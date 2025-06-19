@@ -4,5 +4,6 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Outfit', Courier, monospace;  
+  font-family: 'Outfit', Courier, monospace; 
+  overflow: hidden;
 }

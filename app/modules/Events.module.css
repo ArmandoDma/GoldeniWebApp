@@ -3,3 +3,176 @@
     width: 95%;
     margin: auto;
 }
+
+.flterBox{
+    width: 90%;
+    margin: auto;
+    background-color: #044c3c;
+    padding: 1.5rem;
+    display: flex;
+    position: relative;
+    z-index: 100;
+    bottom: 30px;
+    align-items: center;
+}
+
+.ctBox{
+    width: calc(33% - 5px);
+    padding: 5px;
+    color: #fff;
+}
+
+.ctBox h4{
+    font-weight: 300;
+    font-size: .9rem;
+    margin-bottom: 10px;
+}
+.ctBox input,
+.ctBox select{
+    width: 100%;
+    outline: none;
+    color: #fff;
+    font-family: inherit;
+    padding: .625rem;
+    background-color: #00795e50;
+    border: 1px solid #00795e;
+}
+.ctBox input::placeholder{
+    color: #ddd;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.controls button {
+  background-color: #b49a03;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 6px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #066a52;
+}
+.ctCBox{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    scroll-behavior: smooth;
+    padding: 1.5rem 0;
+}
+.card {
+  width: calc(30% - 50px);
+  background: #fff;
+  margin-right: 10px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.price {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #000;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+.actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido */
+.content {
+  display: flex;
+  padding: 1rem;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Fecha */
+.dateBox {
+  background-color: #f1f1f1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 45px;
+}
+
+.day {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #044c3c;
+}
+
+.month {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* Texto */
+.details h3 {
+  font-size: 1rem;
+  margin: 0 0 4px 0;
+  color: #222;
+}
+
+.details p {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 0;
+}

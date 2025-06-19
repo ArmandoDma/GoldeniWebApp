@@ -9,6 +9,7 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "@react-router/node": "^7.5.3",
     "@react-router/serve": "^7.5.3",
     "@tabler/icons": "^3.33.0",

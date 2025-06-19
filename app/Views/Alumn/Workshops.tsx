@@ -1,5 +1,5 @@
-import Portal from "~/Views/Alumn/Portal";
-import type { Route } from "./+types/home";
+import type { Route } from "../../+types/root";
+
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -8,10 +8,10 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function StudentsPortal () {
+const Workshops = () => {
   return (
-    <>
-    <Portal />
-    </>
+    <div>Workshops</div>
   )
 }
+
+export default Workshops;

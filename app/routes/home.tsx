@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import type { Route } from "./+types/home";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 
 export function meta({}: Route.MetaArgs) {

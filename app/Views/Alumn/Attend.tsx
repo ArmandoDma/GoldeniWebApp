@@ -1,4 +1,13 @@
 import { useState } from "react";
+import type { Route } from "../../+types/root";
+
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Goldeni - Private Collage" },
+    { name: "description", content: "" },   
+  ];
+}
 
 const attendanceRecords = [
   { date: "2025-05-18", status: "Asistió" },
