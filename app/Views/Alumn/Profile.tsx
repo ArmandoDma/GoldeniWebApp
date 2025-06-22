@@ -1,8 +1,17 @@
 import { IconAwardFilled, IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp, IconBrandWindows, IconBriefcase, IconChevronLeft, IconCloudFilled, IconDeviceDesktop, IconDevices, IconKey, IconMail, IconUser } from "@tabler/icons-react";
 import styles from "../../modules/Profile.module.css";
 import { Link } from "react-router";
+import type { Route } from "../../+types/root";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Goldeni - Private Collage" },
+    { name: "description", content: "" },
+  ];
+}
 
 const Profile = () => {
+  
   return (
     <>
       <article id="accounts" className={styles.accounts}>

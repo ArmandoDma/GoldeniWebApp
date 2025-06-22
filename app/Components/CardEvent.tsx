@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { eventosEscolares } from "~/data/events";
 import styles from "../modules/Events.module.css";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import { IconChevronLeft, IconChevronRight, IconHeart, IconTicket, IconUpload } from "@tabler/icons-react";
 
 const CardEvent = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -39,10 +39,10 @@ const CardEvent = () => {
           <div className={styles.card} key={evento.id}>
             <div className={styles.imageContainer}>
               <img src={evento.imagen} alt={evento.nombre} />
-              <span className={styles.price}>🎟️ Gratis</span>
+              <span className={styles.price}><IconTicket size={20}/> Gratis</span>
               <div className={styles.actions}>
-                <button title="Guardar">🔗</button>
-                <button title="Me gusta">❤️</button>
+                <button title="Guardar"><IconUpload size={20} color="#000" /></button>
+                <button title="Me gusta"><IconHeart stroke={2} size={20} color="#ff0000"/></button>
               </div>
             </div>
 

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "../modules/Carousel.module.css";
 import { IconChevronRight } from "@tabler/icons-react";
-import { Link, useLocation } from "react-router"; 
-import { slidesByRoute } from '~/data/slides';
+import { Link, useLocation } from "react-router";
+import { slidesByRoute } from "~/data/slides";
 
 const Carousel = () => {
   const location = useLocation();
@@ -13,20 +13,49 @@ const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(-1);
   const slideDuration = 5000;
 
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const currentSlideRef = useRef(currentSlide); // 👈 Mantener el estado sincronizado
+
+  useEffect(() => {
+    currentSlideRef.current = currentSlide;
+  }, [currentSlide]);
+
+  const startCarousel = () => {
+    if (intervalRef.current) return; // evita crear múltiples intervals
+    intervalRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev === -1 ? 0 : (prev + 1) % slides.length));
+    }, slideDuration);
+  };
+
+  const stopCarousel = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
   useEffect(() => {
     const initialTimeout = setTimeout(() => {
       setCurrentSlide(0);
-    }, 100);
+      startCarousel(); // ✅ Solo empieza después de mostrar el primer slide
+    }, 500);
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) =>
-        prev === -1 ? 0 : (prev + 1) % slides.length
-      );
-    }, slideDuration);
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopCarousel();
+      } else {
+        if (currentSlideRef.current !== -1) {
+          startCarousel();
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       clearTimeout(initialTimeout);
-      clearInterval(interval);
+      stopCarousel();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [slides.length]);
 
@@ -40,13 +69,9 @@ const Carousel = () => {
         className={styles.slider}
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
-        {slides.map((slide:any, index:any) => (
+        {slides.map((slide, index) => (
           <div className={styles.slide} key={index}>
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className={styles.image}
-            />
+            <img src={slide.image} alt={slide.title} className={styles.image} />
             <div
               className={`${styles.caption} ${
                 index === currentSlide ? styles.animateCaption : ""
@@ -65,8 +90,9 @@ const Carousel = () => {
           </div>
         ))}
       </div>
+
       <div className={styles.indicators}>
-        {slides.map((_:any, index:any) => (
+        {slides.map((_, index) => (
           <span
             key={index}
             className={`${styles.indicator} ${

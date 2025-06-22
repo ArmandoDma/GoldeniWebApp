@@ -24,7 +24,7 @@ const LayoutViews = () => {
             </ul>
             <ul className={styles.drsrch}>
               <li>
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Buscar" />
               </li>
               <li>
                 <Link to="/students/notifications" title="Notificaciones">

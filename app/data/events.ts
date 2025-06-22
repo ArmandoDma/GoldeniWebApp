@@ -3,14 +3,14 @@ export const eventosEscolares = [
     id: 1,
     nombre: "Feria de Ciencias",
     fecha: "2025-06-25",
-    lugar: "Gimnasio escolar",
+    lugar: "Explanada Rectoría",
     descripcion: "Exposición de proyectos científicos realizados por estudiantes.",
     imagen: "https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: 2,
-    nombre: "Acto por el Día de la Independencia",
-    fecha: "2025-07-09",
+    nombre: "Acto del Día de la Independencia",
+    fecha: "2025-09-15",
     lugar: "Salón de actos",
     descripcion: "Presentaciones artísticas y ceremonia cívica.",
     imagen: "https://plus.unsplash.com/premium_photo-1664474821468-6d9a0c99a528?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

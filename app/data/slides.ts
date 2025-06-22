@@ -1,3 +1,4 @@
+
 export const slidesByRoute = {
   "/students/portal": [
     {
@@ -43,6 +44,26 @@ export const slidesByRoute = {
       title: "Conexiones Globales: Tu Puente al Mundo",
       text: "Accede a oportunidades de estudio y experiencia en el extranjero durante todo el año.",
       tag: "International",
+    },
+  ],
+  "/students/workshops": [
+    {
+      image: "/slider1.jpg",
+      title: "Explora tu lado artístico en cada trazo",
+      text: "Desarrolla tu imaginación con técnicas de dibujo, pintura y expresión visual.",
+      tag: "Talleres",
+    },
+    {
+      image: "/slider2.jpg",
+      title: "Tecnología divertida para grandes ideas",
+      text: "Aprende programación, robótica y herramientas digitales de forma práctica y entretenida.",
+      tag: "Talleres",
+    },
+    {
+      image: "/slider3.jpg",
+      title: "Descubre nuevas habilidades este semestre",
+      text: "Elige entre múltiples talleres para crecer personal y profesionalmente.",
+      tag: "Talleres",
     },
   ],
 };

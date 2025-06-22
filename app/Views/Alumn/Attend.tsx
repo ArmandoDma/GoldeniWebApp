@@ -1,79 +1,100 @@
-import { useState } from "react";
+import styles from "../../modules/Attend.module.css";
 import type { Route } from "../../+types/root";
-
+import { IconFilter } from "@tabler/icons-react";
+import { asistencias } from "~/data/attend";
 
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Goldeni - Private Collage" },
-    { name: "description", content: "" },   
+    { name: "description", content: "" },
   ];
 }
 
-const attendanceRecords = [
-  { date: "2025-05-18", status: "Asistió" },
-  { date: "2025-05-19", status: "Faltó" },
-  { date: "2025-05-20", status: "Justificado" },
-  { date: "2025-05-21", status: "Asistió" },
-  { date: "2025-05-22", status: "Faltó" },
-];
-
-const statusColors = {
-  "Asistió": "green",
-  "Faltó": "red",
-  "Justificado": "orange",
-};
-
 const Attend = () => {
-  
+  const getBadgeClass = (estado: any) => {
+    switch (estado.toLowerCase()) {
+      case "presente":
+        return styles.presente;
+      case "ausente":
+        return styles.ausente;
+      case "tarde":
+        return styles.retardo;
+      case "justificada":
+        return styles.justificada;
+      default:
+        return "";
+    }
+  };
+
   return (
     <>
-     <div style={styles.container}>
-      <h1>Historial de Asistencias</h1>
-      <table style={styles.table}>
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          {attendanceRecords.map(({ date, status }) => (
-            <tr key={date}>
-              <td>{new Date(date).toLocaleDateString()}</td>
-              <td style={{ color: statusColors[status], fontWeight: "bold" }}>
-                {status}
-              </td>
+      <div className={styles.ctAttend}>
+        <div className={styles.flterRow}>
+          <h2>Filtrar por:</h2>
+          <div className={styles.rw}>
+            <p>Fecha</p>
+            <input type="date" placeholder="" />
+          </div>
+          <div className={styles.rw}>
+            <p>Estado</p>
+            <select name="" id="">
+              <option value="">Presente</option>
+              <option value="">Justificada</option>
+              <option value="">Ausente</option>
+            </select>
+          </div>
+          <div className={styles.rw}>
+            <p>Asignatura</p>
+            <select name="" id="">
+              <option value="">Administración Del Tiempo</option>
+              <option value="">Inglés VII</option>
+            </select>
+          </div>
+          <div className={styles.rw}>
+            <p>btn</p>
+            <button type="submit">
+              Filtrar <IconFilter size={16} />
+            </button>
+          </div>
+        </div>
+        <table className={styles.tblAttends}>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Asignatura</th>
+              <th>Docente</th>
+              <th>Estado Asistencia</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {asistencias.map((asis) => (
+              <tr key={asis.id}>
+                <td>{asis.id}</td>
+                <td>{asis.fecha}</td>
+                <td>{asis.asignatura}</td>
+                <td className={styles.profesor}>
+                  <div className={styles.avatarContainer}>
+                    <img
+                      alt={asis.docente}
+                      src={asis.fotoDoc}
+                      className={styles.avatar}
+                      title={asis.docente}
+                    />
+                  </div>
+                </td>
+                <td>
+                  <span className={`${styles.badge} ${getBadgeClass(asis.estado)}`}>
+                    {asis.estado}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
-  )
-}
-
-const styles = {
-  container: {
-    maxWidth: 600,
-    margin: "40px auto",
-    padding: 20,
-    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-  },
-  table: {
-    width: "100%",
-    borderCollapse: "collapse",
-  },
-  th: {
-    borderBottom: "2px solid #ddd",
-    padding: "8px",
-    textAlign: "left",
-  },
-  td: {
-    borderBottom: "1px solid #eee",
-    padding: "8px",
-  },
+  );
 };
-
-
 
 export default Attend;

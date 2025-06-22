@@ -15,6 +15,7 @@ export default [
         route("students/events", "views/Alumn/Eventos.tsx"),
         route("students/attend", "views/Alumn/Attend.tsx"),
         route("students/profile", "views/Alumn/Profile.tsx"),
+        route("students/workshops/:id", "routes/WorkshopsDetail.tsx"),
 
         route("teachers/portal", "routes/teachersPortal.tsx"),
     ])

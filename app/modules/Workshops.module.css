@@ -1,0 +1,116 @@
+.ctWorks {
+  width: 95%;
+  margin: auto;
+  padding: 1.5rem 0;
+}
+
+.ticker {
+  width: 100%;
+  background: #044c3c;
+  color: #fff;
+  margin: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.ticker-content{
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 35s linear infinite;
+}
+
+.ticker-content span{
+    display: inline-flex;
+    align-items: center;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.titulo {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.titulo h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: top;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card-info h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-info p {
+  font-size: .875rem;
+  color: #444;
+  max-height: 100px;
+  white-space: wrap;
+  margin-bottom: 1rem;
+}
+
+.card-info .fecha {
+  font-size: 0.9rem;
+  color: #888;
+  display: block;
+}
+
+.card-info button {
+  background: #044c3c;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card-info button:hover {
+  background: #444;
+}
+

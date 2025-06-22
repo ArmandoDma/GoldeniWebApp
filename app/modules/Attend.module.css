@@ -1,0 +1,135 @@
+.ctAttend {
+    padding: 1.5rem 0;
+    width: 95%;
+    margin: auto;
+}
+
+.flterRow {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #b49a0350;
+    padding: 1rem;
+}
+
+.flterRow h2 {
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.rw {
+    min-width: calc(25% - 10px);
+    display: flex;
+    font-size: .875rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 5px;
+}
+
+.rw input,
+.rw select,
+.rw button {
+    width: 100%;
+    padding: .5rem .625rem;
+    outline: none;
+    border: 2px solid #b49a03;
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: inherit;
+    background-color: #b49a0370;
+}
+
+.rw:last-child p {
+    color: transparent;
+}
+
+.rw:last-child button {
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    border-width: 3px;
+    background-color: #b49a03;
+}
+
+.rw:last-child button svg {
+    margin: 0 5px;
+}
+
+.tblAttends {
+    width: 100%;
+    margin: 20px 0;
+    background-color: transparent;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.tblAttends td {
+    background-color: white;
+    padding: 16px;
+    font-size: .875rem;
+    text-align: left;
+}
+
+.tblAttends th {
+    background-color: #b49a0350;
+    color: #000;
+    font-size: .875rem;
+    text-transform: uppercase;
+    padding: 16px;
+    text-align: left;
+}
+
+.tblAttends tbody tr{
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: .3s ease all;
+}
+
+.tblAttends tbody tr:hover{
+  transform: scale(1.01);
+}
+
+.tblAttends tbody .avatar{
+    width: 30px;
+    height: 30px;
+    border: 2px solid #b49a03;
+    object-fit: cover;
+    object-position: center;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.badge {
+    width: 40%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.presente {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.ausente {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.retardo {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.justificada {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}

@@ -1,0 +1,38 @@
+export const asistencias = [
+  {
+    id: 1,
+    fecha: '2025-06-21',
+    asignatura: 'Matemáticas',
+    docente: 'Prof. Díaz',
+    estado: 'Presente',
+    comentarioDocente: 'Buen desempeño en clase.',
+    fotoDoc: 'https://randomuser.me/api/portraits/men/32.jpg',
+  },
+  {
+    id: 2,
+    fecha: '2025-06-21',
+    asignatura: 'Historia',
+    docente: 'Prof. Torres',
+    estado: 'Ausente',
+    comentarioDocente: 'Falta sin justificar.',
+    fotoDoc: 'https://randomuser.me/api/portraits/men/75.jpg',
+  },
+  {
+    id: 3,
+    fecha: '2025-06-21',
+    asignatura: 'Química',
+    docente: 'Prof. Ríos',
+    estado: 'Tarde',
+    comentarioDocente: 'Llegó 15 minutos tarde.',
+    fotoDoc: 'https://randomuser.me/api/portraits/men/41.jpg',
+  },
+  {
+    id: 4,
+    fecha: '2025-06-21',
+    asignatura: 'Inglés',
+    docente: 'Prof. Smith',
+    estado: 'Justificada',
+    comentarioDocente: 'Falta justificada por enfermedad.',
+    fotoDoc: 'https://randomuser.me/api/portraits/women/68.jpg',
+  },
+];
