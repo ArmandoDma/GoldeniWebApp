@@ -126,7 +126,7 @@ export const Aside = () => {
               to="/students/profile"
               className={
                 isActive("/students/profile") ? styles.activeLink : styles.link
-              }
+              }              
             >
               <img src={profile?.imagen} alt="user_image" />
               <p>                
@@ -147,6 +147,7 @@ export const Aside = () => {
             <Link
               to="/login"
               className={isActive("/login") ? styles.activeLink : styles.link}
+              onClick={() => {localStorage.removeItem("token")}}
             >
               <i>
                 <IconLogout size={22} color="#000" />
