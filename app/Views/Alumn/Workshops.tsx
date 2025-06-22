@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import styles from "../../modules/Workshops.module.css"; // Importación del CSS Module
 import Carousel from "~/Components/Carousel";
 import { IconPointFilled } from "@tabler/icons-react";
+import { Loader } from "~/Components/Loader";
 
 
 export function meta({}: Route.MetaArgs) {
@@ -22,12 +23,19 @@ const avisos = [
 
 const Workshops = () => {
 
+  const [loading, setLoading] = useState(true);
+    useEffect(() => {
+      setLoading(false)
+    }, [])
+  
+    if(loading) return <Loader />
+
   return (
     <>
       <div className={styles.ctWorks}>     
-        {/*Carousel*/}  
-        <Carousel />
-        {/* Ticker de avisos */}
+        
+        <Carousel />        
+
         <div className={styles.ticker}>
           <div className={styles["ticker-content"]}>
             {avisos.map((aviso, idx) => (
@@ -35,14 +43,12 @@ const Workshops = () => {
             ))}
           </div>
         </div>
-
-        {/* Título */}
+      
         <header className={styles.titulo}>
           <h1>Talleres</h1>
           <p>Participa en actividades prácticas este semestre.</p>
         </header>
-
-        {/* Grid de talleres */}
+        
         <section className={styles.grid}>
           {talleres.map((taller, index) => (
             <div className={styles.card} key={index}>

@@ -1,4 +1,6 @@
+import { Loader } from "~/Components/Loader";
 import type { Route } from "../../+types/root";
+import { useEffect, useState } from "react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -8,6 +10,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const Grades = () => {
+  const [loading, setLoading] = useState(true);
+    useEffect(() => {
+      setLoading(false)
+    }, [])
+  
+    if(loading) return <Loader />
   return (
     <div>Grades</div>
   )

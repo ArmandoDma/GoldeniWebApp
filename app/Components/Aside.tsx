@@ -14,26 +14,12 @@ import { useAuthUser } from "~/hooks/useAuthUsers";
 import { useEffect, useState } from "react";
 
 export const Aside = () => {
-  const location = useLocation();
-  const [token, setToken] = useState<string | null>(null);
-
-  useEffect(() => {
-    setToken(localStorage.getItem("token"));
-  }, []);
+  const location = useLocation();  
 
   const { profile, loading, error } = useAuthUser();
 
   const isActive = (path: string) => location.pathname === path;
 
-  if (!token) {
-    return (
-      <aside className={styles.aside}>
-        <nav className={styles.nav}>
-          <p>Por favor inicia sesión</p>
-        </nav>
-      </aside>
-    );
-  }
 
   return (
     <aside className={styles.aside}>

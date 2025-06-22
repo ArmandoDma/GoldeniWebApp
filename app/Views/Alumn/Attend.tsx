@@ -2,6 +2,8 @@ import styles from "../../modules/Attend.module.css";
 import type { Route } from "../../+types/root";
 import { IconFilter } from "@tabler/icons-react";
 import { asistencias } from "~/data/attend";
+import { useEffect, useState } from "react";
+import { Loader } from "~/Components/Loader";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -25,6 +27,13 @@ const Attend = () => {
         return "";
     }
   };
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+
+  if(loading) return <Loader />
 
   return (
     <>

@@ -8,6 +8,7 @@ interface Profile {
   telefono?: string;
   direccion?: string;
   imagen?: string;
+  correo?: string;
   rol?: string;
 }
 
@@ -37,6 +38,7 @@ export const useAuthUser = () => {
           telefono: response.data.telefono,
           direccion: response.data.direccion,
           imagen: response.data.imagen,
+          correo: response.data.correo,
           rol: response.data.rol
         });
       } catch (err: any) {

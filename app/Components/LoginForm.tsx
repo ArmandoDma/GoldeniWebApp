@@ -29,7 +29,9 @@ export const LoginForm = () => {
         nav(path, { replace: true, state: { username, role } });
       })
       .catch((error) => {
-        console.log(error);
+        alert("Error al iniciar sesión: " + error);
+        setPassword("");
+        setUsername("");
       });
   }
   return (
