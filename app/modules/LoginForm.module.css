@@ -166,7 +166,7 @@
     margin-top: .2rem;
 }
 
-form input[type="text"],
+form input[type="email"],
 form input[type="password"] {
     padding: 8px 10px;
     width: 80%;

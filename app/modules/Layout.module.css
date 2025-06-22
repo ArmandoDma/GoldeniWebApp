@@ -37,6 +37,8 @@
     align-items: center;
     color: #fff;
     text-decoration: none;
+    border: none;
+    outline: none;
 }
 
 .iz li a img {

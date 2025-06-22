@@ -38,7 +38,9 @@
     display: inline-flex;
     text-decoration: none;
     align-items: center;
-    color: #000;
+    color: #044c3c;
+    outline: none;
+    border: none;
 }
 
 .izlg li img {
@@ -146,6 +148,7 @@
     align-items: center;
     justify-content: flex-start;
     color: #000;
+    white-space: nowrap;
     border: 1px solid transparent;
     text-decoration: none;
     padding: 8px;
