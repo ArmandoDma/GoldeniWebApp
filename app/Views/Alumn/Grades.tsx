@@ -3,16 +3,12 @@ import { useCalificaciones } from "~/hooks/useCalificaciones";
 import type { Route } from "../../+types/root";
 import styles from "../../modules/Grades.module.css";
 
-const materias = [
-  "Matemáticas",
-  "Español",
-  "Inglés",
-  "Historia",
-  "Física",
-  "Biología",
-  "Química",
-  "Geografía",
-];
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Goldeni - Private Collage" },
+    { name: "description", content: "" },
+  ];
+}
 
 const safeRound = (num: number | undefined): string =>
   typeof num === "number" ? num.toFixed(2) : "-";

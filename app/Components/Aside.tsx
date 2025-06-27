@@ -224,7 +224,7 @@ export const Aside = () => {
               to="/login"
               onClick={() => {
                 localStorage.removeItem("token");
-                localStorage.removeItem("role");
+                localStorage.removeItem("rol");
               }}
               className={styles.link}
             >

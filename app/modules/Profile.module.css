@@ -7,7 +7,7 @@
 .hdracc {
   width: 100%;
   margin: 10px 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 

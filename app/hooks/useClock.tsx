@@ -11,5 +11,5 @@ export const useClock = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return time.toLocaleTimeString();
+  return time.toLocaleString();
 };

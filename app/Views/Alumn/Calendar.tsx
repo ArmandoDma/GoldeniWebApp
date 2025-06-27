@@ -1,7 +1,15 @@
 import React from "react";
 import "../../modules/Calendar.css";
 import { Outlet } from 'react-router';
+import type { Route } from "../../+types/root";
 
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Goldeni - Private Collage" },
+    { name: "description", content: "" },
+  ];
+}
 
 
 interface Day {

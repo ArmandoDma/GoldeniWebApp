@@ -180,6 +180,8 @@
 }
 .activeLink img{
     width: 30px;
+    min-width: 30px;
+    min-height: 30px;
     height: 30px;
     border-radius: 50%;
     object-fit: cover;
@@ -213,6 +215,8 @@
 .link img{
     width: 30px;
     height: 30px;
+    min-width: 30px;
+    min-height: 30px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;

@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { Loader } from "~/Components/Loader";
 import style from "../../modules/Schedule.module.css";
+import type { Route } from "../../+types/root";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Goldeni - Private Collage" },
+    { name: "description", content: "" },
+  ];
+}
 
 const initialSchedule: string[][] = [
   [
