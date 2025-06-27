@@ -1,0 +1,88 @@
+.gradesCt {
+  width: 95%;
+  margin: auto;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.centered {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error {
+  color: #dc2626; /* rojo tailwind */
+}
+
+.card {  
+  width: 100%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937; /* gris oscuro */
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  font-size: 0.875rem;
+  text-align: left;
+  border-collapse: collapse;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.thead {
+  background-color: #ede9fe;
+  color: #6b21a8;
+  font-weight: 600;
+}
+
+.thead th {
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.row:hover {
+  background-color: #f9fafb;
+}
+
+.row td {
+  padding: 0.5rem 1rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.final {
+  font-weight: 600;
+}
+
+.aprobado {
+  color: #16a34a; /* verde */
+  font-weight: 600;
+}
+
+.reprobado {
+  color: #dc2626; /* rojo */
+  font-weight: 600;
+}

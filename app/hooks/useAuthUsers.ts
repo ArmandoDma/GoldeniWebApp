@@ -19,6 +19,7 @@ export const useAuthUser = () => {
 
   useEffect(() => {
     const fetchProfile = async () => {
+<<<<<<< HEAD
       try {       
         const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
 
@@ -31,6 +32,24 @@ export const useAuthUser = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+=======
+      try {
+        const token =
+          typeof window !== "undefined" ? localStorage.getItem("token") : null;
+
+        if (!token) throw new Error("No token found");
+
+        const decoded: any = jwtDecode(token);
+
+        const response = await axios.get(
+          "http://localhost:5270/api/auth/perfil",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+>>>>>>> aef1f5b (GoldeniWebApp)
 
         setProfile({
           nombreCompleto: response.data.nombreCompleto,
@@ -39,7 +58,11 @@ export const useAuthUser = () => {
           direccion: response.data.direccion,
           imagen: response.data.imagen,
           correo: response.data.correo,
+<<<<<<< HEAD
           rol: response.data.rol
+=======
+          rol: response.data.rol,
+>>>>>>> aef1f5b (GoldeniWebApp)
         });
       } catch (err: any) {
         setError(err.message || "Error fetching profile");

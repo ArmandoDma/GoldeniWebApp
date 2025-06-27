@@ -26,6 +26,10 @@ export const LoginForm = () => {
     })
       .then(() => {
         const path = IdRol === 2 ? "/students/portal" : "/teachers/portal";
+<<<<<<< HEAD
+=======
+        localStorage.setItem("rol", IdRol.toString())
+>>>>>>> aef1f5b (GoldeniWebApp)
         nav(path, { replace: true, state: { username, role } });
       })
       .catch((error) => {

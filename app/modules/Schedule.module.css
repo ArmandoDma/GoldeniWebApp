@@ -1,0 +1,145 @@
+.scheduleContainer {
+  background-color: #f5f3ff;
+  padding: 24px;
+  font-family: 'Outfit', Courier, monospace;
+  min-height: 100vh;
+  color: #333;
+}
+
+.scheduleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  font-family: 'Outfit', Courier, monospace;
+}
+
+.save {
+  background-color: #6d28d9;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Outfit', Courier, monospace;
+}
+
+.save:hover {
+  background-color: #5b21b6;
+}
+
+.cancel {
+  background-color: #e5e7eb;
+  color: #111827;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Outfit', Courier, monospace;
+}
+
+.cancel:hover {
+  background-color: #d1d5db;
+}
+
+.scheduleGrid {
+  background-color: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+}
+
+.gridHeader {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  font-weight: 600;
+  text-align: center;
+  color: #6b7280;
+  user-select: none;
+}
+
+.dayHeader {
+  padding: 8px;
+}
+
+.gridRow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 6px;
+}
+
+.timeLabel {
+  text-align: right;
+  padding-right: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cell {
+  padding: 10px 8px;
+  font-size: 14px;
+  min-height: 50px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  white-space: normal;
+  word-wrap: break-word;
+  user-select: none;
+}
+
+.cell:hover {
+  background-color: #ede9fe;
+}
+
+.filled {
+  background-color: #ecfdf5;
+  color: #047857;
+  border-color: #34d399;
+  font-weight: 600;
+}
+
+.empty {
+  background-color: white;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.cell strong {
+  font-size: 15px;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.cell small {
+  font-size: 12px;
+  color: #065f46;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* Hover personalizado para celda activa */
+.cell.hovered {
+  background-color: #dbeafe; /* azul suave */
+  color: #1e40af; /* azul más oscuro */
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
