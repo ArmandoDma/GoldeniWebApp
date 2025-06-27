@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-import { Loader } from "~/Components/Loader";
-import type { Route } from "../../+types/root";
-import { useEffect, useState } from "react";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Goldeni - Private Collage" },
-    { name: "description", content: "" },   
-  ];
-}
-
-const Schedule = () => {
-  const [loading, setLoading] = useState(true);
-    useEffect(() => {
-      setLoading(false)
-    }, [])
-  
-    if(loading) return <Loader />
-  return (
-    <div>Schedule</div>
-  )
-}
-
-export default Schedule;
-=======
 import { useEffect, useState } from "react";
 import { Loader } from "~/Components/Loader";
 import style from "../../modules/Schedule.module.css";
@@ -224,4 +198,3 @@ export default function Schedule() {
     </div>
   );
 }
->>>>>>> aef1f5b (GoldeniWebApp)

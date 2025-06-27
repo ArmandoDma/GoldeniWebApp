@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-import { Loader } from "~/Components/Loader";
-import type { Route } from "../../+types/root";
-import { useEffect, useState } from "react";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Goldeni - Private Collage" },
-    { name: "description", content: "" },   
-  ];
-}
-
-const Grades = () => {
-  const [loading, setLoading] = useState(true);
-    useEffect(() => {
-      setLoading(false)
-    }, [])
-  
-    if(loading) return <Loader />
-  return (
-    <div>Grades</div>
-  )
-}
-
-export default Grades;
-=======
 // src/views/Alumn/Grades.tsx
 import { useCalificaciones } from "~/hooks/useCalificaciones";
 import type { Route } from "../../+types/root";
@@ -113,4 +87,3 @@ const Grades = () => {
 };
 
 export default Grades;
->>>>>>> aef1f5b (GoldeniWebApp)

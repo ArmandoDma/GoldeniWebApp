@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import type { Route } from "../../+types/root";
 import { Loader } from "~/Components/Loader";
-<<<<<<< HEAD
-=======
 import { courses } from "~/data/courses";
 import styles from "../../modules/Courses.module.css";
 
->>>>>>> aef1f5b (GoldeniWebApp)
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,20 +12,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-<<<<<<< HEAD
-const Courses = () => {
-  const [loading, setLoading] = useState(true);
-    useEffect(() => {
-      setLoading(false)
-    }, [])
-  
-    if(loading) return <Loader />
-  return (
-    <div>Courses</div>
-  )
-}
-
-=======
 
 const Courses = () => {
   const [loading, setLoading] = useState(true);
@@ -80,6 +63,5 @@ const Courses = () => {
     </div>
   );
 };
->>>>>>> aef1f5b (GoldeniWebApp)
 
 export default Courses;
