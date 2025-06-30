@@ -1,0 +1,139 @@
+/*Teachers Attend*/
+.ctAtt {
+    width: 95%;
+    margin: auto;
+    padding: 1.5rem 0;
+}
+
+.Tattend {
+    width: 100%;
+    z-index: 100;
+    position: relative;
+}
+
+.dwnldApp {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 30px;
+    border: 2px solid #044c3c;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dwnldApp .cap h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.dwnldApp .cap p {
+    font-weight: 300;
+}
+
+.dwnldApp a {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #b49a03;
+    border-radius: 30px;
+    background-color: #044c3c;
+    text-decoration: none;
+    padding: .75rem 1.5rem;
+    color: #fff;
+}
+
+.ctQR {
+    width: 70%;
+    margin: auto;
+    padding: 2rem;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    border-radius: 30px;
+    justify-content: space-between;
+    border: 2px solid #044c3c;
+}
+
+.steps {
+    width: 65%;
+}
+
+.steps h1 {
+    font-weight: 400;
+}
+
+.stItems ol {
+    list-style: none;
+    padding: 0 2rem;
+    padding-top: 1.5rem;
+    position: relative;
+}
+
+.stItems ol::before {
+    content: '';
+    z-index: 90;
+    position: absolute;
+    background-color: #000;
+    transform: translateX(-100%);
+    left: calc(-5% + 36px);
+    width: .125rem;
+    height: 75%;
+    top: calc(20% - 5px);
+    margin: auto;
+}
+
+.stItems ol li {
+    margin: 1rem 0;
+    position: relative;
+    font-weight: 300;
+    font-size: 1.125rem;
+}
+
+.stItems ol li::before {
+    content: counter(list-item);
+    font-size: 1rem;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(-3% + 2px);
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    color: #000;
+    z-index: 100;
+    transform: translateX(-100%);
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Qr {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formMatricula {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.inputDigit {
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border: 2px solid #044c3c;
+    font-size: 1.25rem;
+    text-align: center;
+}

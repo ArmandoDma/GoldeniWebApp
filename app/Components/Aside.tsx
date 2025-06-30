@@ -12,7 +12,6 @@ import {
   IconUserCheck,
 } from "@tabler/icons-react";
 import { useAuthUser } from "~/hooks/useAuthUsers";
-import { useEffect, useState } from "react";
 
 export const Aside = () => {
   const location = useLocation();
@@ -22,8 +21,8 @@ export const Aside = () => {
     profile?.rol ||
     (typeof window !== "undefined" ? localStorage.getItem("rol") : null);
 
-  const isMaestro = rol === "3" || rol === "Maestro";
-  const isEstudiante = rol === "2" || rol === "Estudiante";
+  const isMaestro = rol === "2" || rol === "Maestro";
+  const isEstudiante = rol === "1" || rol === "Estudiante";
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -173,7 +172,7 @@ export const Aside = () => {
                   <span>Inicio</span>
                 </Link>
               </li>
-              {/* Agrega más enlaces para maestros aquí */}
+
               <li className={styles.navItem}>
                 <Link
                   to="/teachers/groups"
@@ -186,9 +185,42 @@ export const Aside = () => {
                   <i>
                     <IconSchool size={22} />
                   </i>
-                  <span>Grupos</span>
+                  <span>Mis Grupos</span>
                 </Link>
               </li>
+
+              <li className={styles.navItem}>
+                <Link
+                  to="/teachers/grades"
+                  className={
+                    isActive("/teachers/grades")
+                      ? styles.activeLink
+                      : styles.link
+                  }
+                >
+                  <i>
+                    <IconStar size={22} />
+                  </i>
+                  <span>Calificaciones</span>
+                </Link>
+              </li>
+
+              <li className={styles.navItem}>
+                <Link
+                  to="/teachers/attend"
+                  className={
+                    isActive("/teachers/attend")
+                      ? styles.activeLink
+                      : styles.link
+                  }
+                >
+                  <i>
+                    <IconUserCheck size={22} />
+                  </i>
+                  <span>Asistencia</span>
+                </Link>
+              </li>
+
             </>
           )}
         </ul>

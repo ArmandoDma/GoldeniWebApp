@@ -8,7 +8,7 @@ import RequireAuth from "../Components/RequireAuth";
 const LayoutViews = () => {
   return (
     <>
-      <RequireAuth>
+      <RequireAuth allowedRoles={["1"]}>
         <div className={styles.main}>
           <div className={styles.cthdr}>
             <div className={styles.ctnv}>

@@ -37,7 +37,7 @@ const Carousel = () => {
   useEffect(() => {
     const initialTimeout = setTimeout(() => {
       setCurrentSlide(0);
-      startCarousel(); // ✅ Solo empieza después de mostrar el primer slide
+      startCarousel(); 
     }, 500);
 
     const handleVisibilityChange = () => {
@@ -71,7 +71,7 @@ const Carousel = () => {
       >
         {slides.map((slide, index) => (
           <div className={styles.slide} key={index}>
-            <img src={slide.image} alt={slide.title} className={styles.image} />
+            <img src={slide.image} alt={slide.title} className={pathname === "teachers/portal" ? styles.image : styles.teachImage} />
             <div
               className={`${styles.caption} ${
                 index === currentSlide ? styles.animateCaption : ""

@@ -66,4 +66,24 @@ export const slidesByRoute = {
       tag: "Talleres",
     },
   ],
+  "/teachers/portal": [
+    {
+      image: "/reprobados.jpg",
+      title: "El club de los reprobados",
+      text: "Donde cada examen fallido es una anécdota épica para contar.",
+      tag: "Calificaciones",
+    },
+    {
+      image: "https://plus.unsplash.com/premium_photo-1663054914576-252d1479383e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Recursos para tus clases",
+      text: "Encuentra materiales, guías y dinámicas para planificar mejor tus sesiones.",
+      tag: "Material Didáctico",
+    },
+    {
+      image: "https://cdn1.iconfinder.com/data/icons/medical-healthcare-61/3000/MC002-512.png",
+      title: "Cuida tu bienestar",
+      text: "Estrategias para equilibrar trabajo y vida personal sin descuidar tu salud.",
+      tag: "Bienestar Docente",
+    },
+  ],
 };

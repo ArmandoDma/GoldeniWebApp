@@ -13,8 +13,8 @@ export const LoginForm = () => {
     e.preventDefault();
 
     const rolMap: Record<string, number> = {
-      Estudiante: 2,
-      Maestro: 3,
+      Estudiante: 1,
+      Maestro: 2,
     };
 
     const IdRol = rolMap[role] ?? "";
@@ -25,7 +25,7 @@ export const LoginForm = () => {
       IdRol,
     })
       .then(() => {
-        const path = IdRol === 2 ? "/students/portal" : "/teachers/portal";
+        const path = IdRol === 1 ? "/students/portal" : "/teachers/portal";
         localStorage.setItem("rol", IdRol.toString())
         nav(path, { replace: true, state: { username, role } });
       })

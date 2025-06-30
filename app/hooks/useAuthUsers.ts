@@ -35,7 +35,7 @@ export const useAuthUser = () => {
             },
           }
         );
-
+      
         setProfile({
           nombreCompleto: response.data.nombreCompleto,
           matricula: response.data.matricula,
@@ -45,6 +45,7 @@ export const useAuthUser = () => {
           correo: response.data.correo,
           rol: response.data.rol,
         });
+
       } catch (err: any) {
         setError(err.message || "Error fetching profile");
       } finally {

@@ -22,7 +22,7 @@ const Authenticated = ({ children }: { children: React.ReactNode }) => {
   if (!authChecked) return <Loader />;
 
   if (isAuthenticated) {
-    const path = role === "3" ? "/teachers/portal" : "/students/portal";
+    const path = role === "2" ? "/teachers/portal" : "/students/portal";
     return <Navigate to={path} replace />;
   }
 

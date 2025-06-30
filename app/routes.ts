@@ -19,6 +19,10 @@ export default [
         route("students/workshops/:id", "routes/WorkshopsDetail.tsx")        
     ]),
     layout("./Views/LayoutTeachers.tsx", [
-        route("teachers/portal", "routes/teachersPortal.tsx")
+        route("teachers/portal", "routes/teachersPortal.tsx"),
+        route("teachers/groups", "views/Teachers/Groups.tsx"),
+        route("teachers/grades", "views/Teachers/Grades.tsx"),
+        route("teachers/attend", "views/Teachers/Attend.tsx"),
+        route("teachers/profile", "views/Teachers/Profile.tsx"),
     ])
 ] satisfies RouteConfig;

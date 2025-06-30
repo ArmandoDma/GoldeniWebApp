@@ -26,8 +26,6 @@ export const useCalificaciones = () => {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
-
-        console.log("Datos recibidos:", response.data);
         
         setCalificaciones(response.data);
       } catch (e: any) {

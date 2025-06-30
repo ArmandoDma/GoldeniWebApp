@@ -26,6 +26,15 @@
     vertical-align: top;
 }
 
+.teachImage{
+    width: 100%;
+    background-color: #044c3c;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+    vertical-align: top;
+}
+
 .caption {
     display: flex;
     flex-direction: column;

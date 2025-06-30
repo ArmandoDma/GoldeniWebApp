@@ -7,13 +7,13 @@ import RequireAuth from "../Components/RequireAuth";
 const LayoutTeachers = () => {
   return (
     <>
-      <RequireAuth>
+      <RequireAuth allowedRoles={["2"]}>
         <div className={styles.main}>
           <div className={styles.cthdr}>
             <div className={styles.ctnv}>
               <ul className={styles.izlg}>
                 <li>
-                  <Link to={"/students/portal"}>
+                  <Link to={"/teachers/portal"}>
                     {" "}
                     <img src="/favicon.svg" alt="logo_site" />{" "}
                     <span>
@@ -28,7 +28,7 @@ const LayoutTeachers = () => {
                   <input type="text" placeholder="Buscar" />
                 </li>
                 <li>
-                  <Link to="/students/notifications" title="Notificaciones">
+                  <Link to="/teachers/notifications" title="Notificaciones">
                     <i>
                       <IconBellSchool size={24} color="#000" />
                     </i>
@@ -38,7 +38,7 @@ const LayoutTeachers = () => {
             </div>
           </div>
           <Aside />
-          <main>
+          <main className={styles.root}>
             <Outlet />
           </main>
         </div>

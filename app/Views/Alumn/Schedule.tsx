@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Loader } from "~/Components/Loader";
 import style from "../../modules/Schedule.module.css";
 import type { Route } from "../../+types/root";
+import { IconChevronLeft } from "@tabler/icons-react";
+import { Link, useNavigate } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -77,7 +79,11 @@ const STORAGE_KEY = "scheduleData";
 export default function Schedule() {
   const [loading, setLoading] = useState(true);
   const [schedule, setSchedule] = useState<string[][]>(initialSchedule);
-  const [hoverCell, setHoverCell] = useState<{ day: number; time: number } | null>(null);
+  const [hoverCell, setHoverCell] = useState<{
+    day: number;
+    time: number;
+  } | null>(null);
+  const nav = useNavigate()
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -88,6 +94,13 @@ export default function Schedule() {
       } catch {}
     }
     setLoading(false);
+    const tOut = setTimeout(() => {
+      nav("/students/portal")
+    },8000)
+
+    return () => {
+      clearTimeout(tOut)
+    }
   }, []);
 
   const handleSave = () => {
@@ -103,7 +116,11 @@ export default function Schedule() {
   };
 
   const handleExport = () => {
-    const dataStr = JSON.stringify({ schedule, days, times, teachers }, null, 2);
+    const dataStr = JSON.stringify(
+      { schedule, days, times, teachers },
+      null,
+      2
+    );
     const blob = new Blob([dataStr], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -172,7 +189,8 @@ export default function Schedule() {
             <div className={style.timeLabel}>{time}</div>
             {days.map((_, dayIdx) => {
               const subject = schedule[dayIdx][timeIdx];
-              const isHover = hoverCell?.day === dayIdx && hoverCell?.time === timeIdx;
+              const isHover =
+                hoverCell?.day === dayIdx && hoverCell?.time === timeIdx;
               return (
                 <div
                   key={dayIdx}
@@ -180,7 +198,9 @@ export default function Schedule() {
                     subject !== "Empty" ? style.filled : style.empty
                   } ${isHover ? style.hovered : ""}`}
                   onClick={() => handleCellClick(dayIdx, timeIdx)}
-                  onMouseEnter={() => setHoverCell({ day: dayIdx, time: timeIdx })}
+                  onMouseEnter={() =>
+                    setHoverCell({ day: dayIdx, time: timeIdx })
+                  }
                   onMouseLeave={() => setHoverCell(null)}
                   title={
                     subject !== "Empty"
@@ -202,6 +222,31 @@ export default function Schedule() {
             })}
           </div>
         ))}
+      </div>
+      <div className={style.ovrlay}>
+        <div className={style.announ}>
+          <div className={style.tiAnnoun}>
+            <h2>Modulo En Desarrollo</h2>
+          </div>
+          <div className={style.bdyAnnoun}>
+            <div className={style.lgOver}>
+              <img src="/favicon.svg" alt="" />
+              <div className={style.lgTi}>
+                <p>
+                  GOLDENI <hr /> <span> PRIVATE COLLAGE</span>
+                </p>
+              </div>
+            </div>
+            <p>
+              Estamos afinando los últimos detalles para ofrecerte
+              una mejor experiencia posible. <br /> <p>¡Gracias por tu paciencia y por
+              acompañarnos en este proceso!</p>
+            </p>
+          </div>
+          <div className={style.btn}>
+            <p>Redireccionando ...</p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -10,8 +10,12 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-const safeRound = (num: number | undefined): string =>
-  typeof num === "number" ? num.toFixed(2) : "-";
+const safeRound = (num: number | undefined): string => {
+  if (typeof num !== "number") return "-";
+  const rounded = Math.round(num * 10) / 10; // redondea a 1 decimal
+  return rounded.toFixed(1);
+};
+
 
 
 const calcularEstado = (nota: number | string) => {
