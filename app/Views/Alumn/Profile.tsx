@@ -32,7 +32,7 @@ export function meta({}: Route.MetaArgs) {
 const Profile = () => {
 
   const { profile, loading, error } = useAuthUser();
-  const currentTime = useClock();  
+  const currentTime = useClock();    
 
   if (loading) return <Loader />;
   if (error) return <p>Error: {error}</p>;
@@ -65,14 +65,14 @@ const Profile = () => {
               <div className={styles["cap-acc"]}>
                 <h2>{profile?.nombreCompleto}</h2>
                 <p id="rol">{profile?.rol}</p>
-                <a href="mailto:armandoguapo@example.com" id="acc-mail">
+                <a href={`mailto:${profile?.correo}`} id="acc-mail">
                   {profile?.correo}
                 </a>
               </div>
             </div>
             <div className={styles.social}>
               <h3>Carrera: </h3>
-              <p>Ing. Desarrollo de Software Multiplataforma</p>
+              <p>{profile?.carrera}</p>
             </div>
             <div className={styles.social}>
               <h3>Actividad reciente: </h3>

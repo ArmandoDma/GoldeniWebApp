@@ -6,6 +6,7 @@ interface Profile {
   nombreCompleto: string;
   matricula?: string;
   telefono?: string;
+  carrera?: string;
   direccion?: string;
   imagen?: string;
   correo?: string;
@@ -41,10 +42,11 @@ export const useAuthUser = () => {
           matricula: response.data.matricula,
           telefono: response.data.telefono,
           direccion: response.data.direccion,
-          imagen: response.data.imagen,
+          imagen: response.data.imagen,      
           correo: response.data.correo,
+          carrera: response.data.carrera,
           rol: response.data.rol,
-        });
+        });        
 
       } catch (err: any) {
         setError(err.message || "Error fetching profile");

@@ -88,6 +88,7 @@
 
 .card-info p {
   font-size: .875rem;
+  text-align: justify;
   color: #444;
   max-height: 100px;
   white-space: wrap;

@@ -1,10 +1,21 @@
 import { useRef } from "react";
-import { eventosEscolares } from "~/data/events";
 import styles from "../modules/Events.module.css";
-import { IconChevronLeft, IconChevronRight, IconHeart, IconTicket, IconUpload } from "@tabler/icons-react";
+import {
+  IconChevronLeft,
+  IconChevronRight,
+  IconHeart,
+  IconTicket,
+  IconUpload,
+} from "@tabler/icons-react";
+import { Loader } from "./Loader";
+import { useEvents } from "~/hooks/useEvents";
 
 const CardEvent = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { events, loading, error } = useEvents("Evento");
+
+  if (loading) return <Loader />;
+  if (error) return <p>Error: {error}</p>;
 
   const scrollRight = () => {
     if (scrollRef.current) {
@@ -35,24 +46,30 @@ const CardEvent = () => {
       </div>
 
       <div className={styles.ctCBox} ref={scrollRef}>
-        {eventosEscolares.map((evento) => (
-          <div className={styles.card} key={evento.id}>
+        {events.map((evento, i) => (
+          <div className={styles.card} key={i}>
             <div className={styles.imageContainer}>
-              <img src={evento.imagen} alt={evento.nombre} />
-              <span className={styles.price}><IconTicket size={20}/> Gratis</span>
+              <img src={evento.imagenEvent} alt={evento.nombre} />
+              <span className={styles.price}>
+                <IconTicket size={20} /> {evento.precio.toLocaleString("es-MX", {style: "currency", currency: "MXN"})}
+              </span>
               <div className={styles.actions}>
-                <button title="Guardar"><IconUpload size={20} color="#000" /></button>
-                <button title="Me gusta"><IconHeart stroke={2} size={20} color="#ff0000"/></button>
+                <button title="Guardar">
+                  <IconUpload size={20} color="#000" />
+                </button>
+                <button title="Me gusta">
+                  <IconHeart stroke={2} size={20} color="#ff0000" />
+                </button>
               </div>
             </div>
 
             <div className={styles.content}>
               <div className={styles.dateBox}>
                 <span className={styles.day}>
-                  {new Date(evento.fecha).getDate()}
+                  {new Date(evento.fechaInicio).getDate()}
                 </span>
                 <span className={styles.month}>
-                  {new Date(evento.fecha)
+                  {new Date(evento.fechaInicio)
                     .toLocaleString("es-ES", { month: "short" })
                     .toUpperCase()}
                 </span>
