@@ -233,13 +233,13 @@ export default function Schedule() {
               <img src="/favicon.svg" alt="" />
               <div className={style.lgTi}>
                 <p>
-                  GOLDENI <hr /> <span> PRIVATE COLLAGE</span>
+                  GOLDENI <span> PRIVATE COLLAGE</span>
                 </p>
               </div>
             </div>
             <p>
               Estamos afinando los últimos detalles para ofrecerte
-              una mejor experiencia posible. <br /> <p>¡Gracias por tu paciencia y por
+              una mejor experiencia posible. <p>¡Gracias por tu paciencia y por
               acompañarnos en este proceso!</p>
             </p>
           </div>

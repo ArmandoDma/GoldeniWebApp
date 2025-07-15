@@ -17,7 +17,6 @@ import {
 import styles from "../../modules/Profile.module.css";
 import { Link } from "react-router";
 import type { Route } from "../../+types/root";
-import { useEffect, useState } from "react";
 import { useAuthUser } from "~/hooks/useAuthUsers";
 import { Loader } from "~/Components/Loader";
 import { useClock } from "~/hooks/useClock";

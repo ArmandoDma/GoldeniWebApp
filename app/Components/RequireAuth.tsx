@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router";
 import { Loader } from "./Loader";
+import { jwtDecode } from "jwt-decode";
+
+// 1️⃣ Define el tipo de tu payload JWT
+interface JwtPayload {
+  exp: number;
+  IdRol: string;
+}
 
 const RequireAuth = ({
   children,
@@ -20,8 +27,27 @@ const RequireAuth = ({
       const storedRole = localStorage.getItem("rol");
 
       if (token && storedRole) {
-        setIsAuthenticated(true);
-        setRole(storedRole);
+        try {
+          const decoded = jwtDecode<JwtPayload>(token);
+
+          const now = Math.floor(Date.now() / 1000); // segundos
+
+          if (decoded.exp < now) {
+            // Token expirado: limpia y bloquea
+            localStorage.removeItem("token");
+            localStorage.removeItem("rol");
+            setIsAuthenticated(false);
+            setRole(null);
+          } else {
+            setIsAuthenticated(true);
+            setRole(storedRole);
+          }
+        } catch (error) {
+          console.error("Token inválido:", error);
+          localStorage.removeItem("token");
+          localStorage.removeItem("rol");
+          setIsAuthenticated(false);
+        }
       }
     }
     setAuthChecked(true);
@@ -36,8 +62,8 @@ const RequireAuth = ({
   }
 
   if (role && !allowedRoles.includes(role)) {
-    
-    const redirectPath = role === "Estudiante" ? "/students/portal" : "/teachers/portal";
+    const redirectPath =
+      role === "Estudiante" ? "/students/portal" : "/teachers/portal";
     return <Navigate to={redirectPath} replace />;
   }
 

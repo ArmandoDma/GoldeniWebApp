@@ -98,8 +98,7 @@ const Eventos = () => {
             />
           </div>
         </div>
-
-        {eventosFiltrados.map((event) => (
+        {eventosFiltrados.map((event:any) => (
           <CardEvent key={event.nombre} data={event} />
         ))}
       </div>

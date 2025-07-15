@@ -1,18 +1,19 @@
-import axios, { type AxiosResponse } from "axios"
+import { type AxiosResponse } from "axios";
+import ApiClient from "~/hooks/ApiClient";
 
-interface ApiLogin{
-    email: string;
-    password: string;
-    IdRol: number;
+interface ApiLogin {
+  email: string;
+  password: string;
+  IdRol: number;
 }
 
 export const ApiAuthLogin = async (params: ApiLogin): Promise<AxiosResponse> => {
-    const response = await axios.post("http://localhost:5270/api/Auth/login", params)
-    const data = response.data;
+  const response = await ApiClient.post("/Auth/login", params);
+  const data = response.data;
 
-    if(data.token){
-        localStorage.setItem("token" , data.token);
-    }
+  if (data.token) {
+    localStorage.setItem("token", data.token);
+  }
 
-    return data;
-}
+  return data;
+};
