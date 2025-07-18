@@ -2,6 +2,7 @@ import { useGroups } from "~/hooks/useGroups";
 import type { Route } from "../../+types/root";
 import styles from "../../modules/Groups.module.css";
 import { Loader } from "~/Components/Loader";
+import { IconEye } from "@tabler/icons-react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -44,28 +45,23 @@ const Groups = () => {
                   </p>
                 )}
 
-                <div className={styles.studentsInfo}>
-                  {grupo.alumnos.map((alumno) => (
-                    <div key={alumno.idAlumno} className={styles.studentName}>
-                      {alumno.nombre} {alumno.apellidoPaterno}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Botón de acción futuro */}
                 <button
                   style={{
                     marginTop: "12px",
                     backgroundColor: "#0052cc",
+                    display: "flex",
+                    alignItems: "center",
                     color: "#fff",
                     border: "none",
+                    fontFamily: "inherit",
                     padding: "8px 16px",
                     borderRadius: "5px",
                     cursor: "pointer",
                   }}
                   onClick={() => alert(`Grupo: ${grupo.nombreGrupo}`)}
                 >
-                  Ver Detalles
+                 <IconEye size={20}
+                 color="#fff" style={{marginRight: 10}} />  Ver Grupo
                 </button>
               </div>
             </div>

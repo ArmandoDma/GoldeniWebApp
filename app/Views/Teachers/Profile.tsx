@@ -70,10 +70,6 @@ const Profile = () => {
               </div>
             </div>
             <div className={styles.social}>
-              <h3>Carrera: </h3>
-              <p>{profile?.carrera}</p>
-            </div>
-            <div className={styles.social}>
               <h3>Actividad reciente: </h3>
               <button role="button" type="button">
                 <span>

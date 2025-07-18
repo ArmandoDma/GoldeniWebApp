@@ -3,7 +3,7 @@ import { Navigate, useLocation } from "react-router";
 import { Loader } from "./Loader";
 import { jwtDecode } from "jwt-decode";
 
-// 1️⃣ Define el tipo de tu payload JWT
+
 interface JwtPayload {
   exp: number;
   IdRol: string;
