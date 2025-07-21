@@ -24,5 +24,18 @@ export default [
         route("teachers/grades", "views/Teachers/Grades.tsx"),
         route("teachers/attend", "views/Teachers/Attend.tsx"),
         route("teachers/profile", "views/Teachers/Profile.tsx"),
+    ]),
+
+    layout("./Views/LayoutAdmin.tsx", [
+        route("admin/portal", "routes/adminPortal.tsx"),
+        route("admin/register-student", "views/Admin/AlumnoForm.tsx"),
+        route("admin/register-teacher", "views/Admin/MaestroForm.tsx"),
+        /*route("admin/register-portal", "views/Admin/RegisterForm.tsx"),
+        route("admin/create-groups", "views/Admin/CreateGroups.tsx"),
+        route("admin/assign-groups", "views/Admin/AssignGroups.tsx"),
+        route("admin/create-workshops", "views/Admin/CreateWorkshops.tsx"),
+        route("admin/create-events", "views/Admin/CreateEvents.tsx"),
+        route("admin/assign-roles", "views/Admin/AssignRoles.tsx"),*/
     ])
+
 ] satisfies RouteConfig;

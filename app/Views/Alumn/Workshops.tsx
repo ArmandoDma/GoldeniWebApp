@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import type { Route } from "../../+types/root";
-import { talleres } from "~/data/workshops";
 import { Link, useLocation, useNavigate } from "react-router";
 import styles from "../../modules/Workshops.module.css"; // Importación del CSS Module
 import Carousel from "~/Components/Carousel";
