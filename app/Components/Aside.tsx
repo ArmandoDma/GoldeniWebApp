@@ -21,6 +21,7 @@ export const Aside = () => {
     profile?.rol ||
     (typeof window !== "undefined" ? localStorage.getItem("rol") : null);
 
+  const isAdmin = rol === "3" || rol === "Admin";
   const isMaestro = rol === "2" || rol === "Maestro";
   const isEstudiante = rol === "1" || rol === "Estudiante";
 
@@ -220,7 +221,24 @@ export const Aside = () => {
                   <span>Asistencia</span>
                 </Link>
               </li>
+            </>
+          )}
 
+          {isAdmin && (
+            <>
+              <li className={styles.navItem}>
+                <Link
+                  to={"/admin/portal"}
+                  className={
+                    isActive("/admin/portal") ? styles.activeLink : styles.link
+                  }
+                >
+                  <i>
+                    <IconUserCheck size={22} />
+                  </i>
+                  <span>Inicio</span>
+                </Link>
+              </li>
             </>
           )}
         </ul>
@@ -228,9 +246,17 @@ export const Aside = () => {
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <Link
-              to={isEstudiante ? "/students/profile" : "/teachers/profile"}
+              to={
+                isEstudiante
+                  ? "/students/profile"
+                  : isMaestro
+                  ? "/teachers/profile"
+                  : "/admin/profile"
+              }
               className={
-                isActive("/students/profile") || isActive("/teachers/profile")
+                isActive("/students/profile") ||
+                isActive("/teachers/profile") ||
+                isActive("/admin/profile")
                   ? styles.activeLink
                   : styles.link
               }
@@ -252,19 +278,36 @@ export const Aside = () => {
           </li>
 
           <li className={styles.navItem}>
-            <Link
-              to="/login"
-              onClick={() => {
-                localStorage.removeItem("token");
-                localStorage.removeItem("rol");
-              }}
-              className={styles.link}
-            >
-              <i>
-                <IconLogout size={22} />
-              </i>
-              <span>Cerrar Sesión</span>
-            </Link>
+            {(isEstudiante || isMaestro) && (
+              <Link
+                to="/login"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  localStorage.removeItem("rol");
+                }}
+                className={styles.link}
+              >
+                <i>
+                  <IconLogout size={22} />
+                </i>
+                <span>Cerrar Sesión</span>
+              </Link>
+            )}
+            {isAdmin && (
+              <Link
+                to="/admin/login"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  localStorage.removeItem("rol");
+                }}
+                className={styles.link}
+              >
+                <i>
+                  <IconLogout size={22} />
+                </i>
+                <span>Cerrar Sesión</span>
+              </Link>
+            )}
           </li>
         </ul>
       </nav>

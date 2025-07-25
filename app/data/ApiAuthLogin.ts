@@ -1,4 +1,4 @@
-import { type AxiosResponse } from "axios";
+
 import ApiClient from "~/hooks/ApiClient";
 
 interface ApiLogin {
@@ -7,7 +7,8 @@ interface ApiLogin {
   IdRol: number;
 }
 
-export const ApiAuthLogin = async (params: ApiLogin): Promise<AxiosResponse> => {
+export const ApiAuthLogin = async (params: ApiLogin): Promise<any> => {
+  console.log("🔍 Enviando a login:", params);
   const response = await ApiClient.post("/Auth/login", params);
   const data = response.data;
 

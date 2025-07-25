@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import styles from "../modules/LoginForm.module.css";
 import { useState } from "react";
 import { ApiAuthLogin } from "~/data/ApiAuthLogin";
@@ -73,7 +73,7 @@ export const LoginForm = () => {
               <a href="#forgot-password">forgot your password?</a>
               <p>
                 <strong>Note :</strong> if you're GOLDENI administrator, you
-                should enter since <a href="#link-teacher">GOLDENI Admins.</a>
+                should enter since <Link to={"/admin/login"}>Goldeni Admins</Link>
               </p>
             </div>
             <hr style={{ border: "1px solid #eee" }} />

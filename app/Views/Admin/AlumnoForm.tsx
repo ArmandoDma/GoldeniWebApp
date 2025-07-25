@@ -24,7 +24,7 @@ const AlumnoForm: React.FC<Props> = ({ editarMatricula, onSuccess }) => {
     idEstado: undefined,
     idCarrera: undefined,
     idTurno: undefined,
-    estadoAlumno: true,
+    estadoAlumno: "Activo",
     idGrado: undefined,
     idGrupo: undefined,
     idPeriodo: undefined,
@@ -94,17 +94,30 @@ const AlumnoForm: React.FC<Props> = ({ editarMatricula, onSuccess }) => {
 
     return true;
   };
-
+  
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]:
-        name === "estadoAlumno" ? value === "true" : value === "" ? undefined : value,
-    }));
-  };
+  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+) => {
+  const { name, value } = e.target;
+
+  const numberFields = [
+    "idEstado",
+    "idMunicipio",
+    "idCarrera",
+    "idTurno",
+    "idGrado",
+    "idGrupo",
+    "idPeriodo",
+  ];
+
+  setForm((prev) => ({
+    ...prev,
+    [name]: numberFields.includes(name)
+      ? value === "" ? undefined : Number(value)
+      : value,
+  }));
+};
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -130,7 +143,7 @@ const AlumnoForm: React.FC<Props> = ({ editarMatricula, onSuccess }) => {
 
           <div className={styles.formlg}>
             <div className={styles.cnt}>
-              <img src="/logo192.png" alt="logo" />
+              <img src="/favicon.svg" alt="logo" />
               <span>
                 <p>{editarMatricula ? "Editar Alumno" : "Registrar Alumno"}</p>
                 <p>Formulario escolar</p>
@@ -310,8 +323,8 @@ const AlumnoForm: React.FC<Props> = ({ editarMatricula, onSuccess }) => {
               required
             >
               <option value="">Selecciona Periodo</option>
-              <option value="2025-1">2025-1</option>
-              <option value="2025-2">2025-2</option>
+              <option value="1">2025-1</option>
+              <option value="2">2025-2</option>
             </select>
           </div>
 

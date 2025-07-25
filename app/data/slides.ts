@@ -86,4 +86,24 @@ export const slidesByRoute = {
       tag: "Bienestar Docente",
     },
   ],
+  "/admin/portal": [
+  {
+    "image": "/grades.jpg",
+    "title": "El club de los reprobados",
+    "text": "Seguimiento de bajas académicas, evaluaciones críticas y rendimiento estudiantil.",
+    "tag": "Calificaciones"
+  },
+  {
+    "image": "/money.jpg",
+    "title": "¿Dónde está el presupuesto?",
+    "text": "Control y supervisión de recursos financieros asignados a cada departamento.",
+    "tag": "Finanzas"
+  },
+  {
+    "image": "/docs.jpg",
+    "title": "La fábrica de constancias",
+    "text": "Gestión de solicitudes administrativas: constancias, certificados y oficios escolares.",
+    "tag": "Trámites escolares"
+  }
+  ],
 };

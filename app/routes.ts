@@ -4,6 +4,7 @@ export default [
     index("routes/home.tsx"),
     layout("./Auth/Layout.tsx", [
         route("login", "routes/login.tsx"),
+        route("/admin/login", "routes/loginAdmin.tsx")
     ]),
     layout("./Views/LayoutViews.tsx", [        
         //students routes
@@ -26,7 +27,7 @@ export default [
         route("teachers/profile", "views/Teachers/Profile.tsx"),
     ]),
 
-    layout("./Views/LayoutAdmin.tsx", [
+    layout("./Views/LayoutAdmin.tsx", [    
         route("admin/portal", "routes/adminPortal.tsx"),
         route("admin/register-student", "views/Admin/AlumnoForm.tsx"),
         route("admin/register-teacher", "views/Admin/MaestroForm.tsx"),

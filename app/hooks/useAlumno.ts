@@ -15,13 +15,13 @@ export interface Alumno {
   idEstado?: number;
   idCarrera?: number;
   idTurno?: number;
-  estadoAlumno?: boolean;
+  estadoAlumno?: string;
   idGrado?: number;
   idGrupo?: number;
   idPeriodo?: number;
 }
 
-const API_URL = "http://localhost:5270/api/alumno";
+const API_URL = "http://localhost:5270/api/Alumno";
 
 export const useAlumno = () => {
   const [alumnos, setAlumnos] = useState<Alumno[]>([]);
@@ -56,22 +56,46 @@ export const useAlumno = () => {
 
   // Crear alumno
   const crearAlumno = async (alumno: Alumno) => {
-    if (!token) throw new Error("Token no disponible");
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await axios.post(API_URL, alumno, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setAlumnos((prev) => [...prev, response.data]);
-      return response.data;
-    } catch (e: any) {
-      setError(e.response?.data?.error || "Error al crear alumno");
-      throw e;
-    } finally {
-      setLoading(false);
+  if (!token) throw new Error("Token no disponible");
+  setLoading(true);
+  setError(null);
+  try {
+    console.log("json que se envía: ", alumno);
+    const response = await axios.post(API_URL, alumno, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    setAlumnos((prev) => [...prev, response.data]);
+    return response.data;
+  } catch (e: any) {
+    console.log("Error response data:", e.response?.data);
+
+    const data = e.response?.data;
+
+    if (data) {
+      if (data.detalles) {
+        // Si vienen detalles de errores de validación
+        const mensajes = data.detalles
+          .map(
+            (d: any) => `${d.Campo}: ${d.Errores.join(", ")}`
+          )
+          .join("\n");
+        setError(`Errores de validación:\n${mensajes}`);
+      } else if (data.error) {
+        setError(data.error);
+      } else if (typeof data === "string") {
+        setError(data);
+      } else {
+        setError("Error al crear alumno");
+      }
+    } else {
+      setError("Error al crear alumno");
     }
-  };
+    throw e;
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   // Actualizar alumno
   const actualizarAlumno = async (matricula: string, alumno: Alumno) => {
