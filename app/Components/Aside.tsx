@@ -3,6 +3,7 @@ import styles from "../modules/Main.module.css";
 import {
   IconCalendar,
   IconClock24,
+  IconEyeglass2,
   IconHome,
   IconLogout,
   IconSchool,
@@ -12,6 +13,7 @@ import {
   IconUserCheck,
 } from "@tabler/icons-react";
 import { useAuthUser } from "~/hooks/useAuthUsers";
+import { ApiAuthLogOut } from "~/data/ApiAuthLogOut";
 
 export const Aside = () => {
   const location = useLocation();
@@ -239,6 +241,32 @@ export const Aside = () => {
                   <span>Inicio</span>
                 </Link>
               </li>
+              <li className={styles.navItem}>
+                <Link
+                  to={"/admin/register-student"}
+                  className={
+                    isActive("/admin/register-student") ? styles.activeLink : styles.link
+                  }
+                >
+                  <i>
+                    <IconSchool size={22} />
+                  </i>
+                  <span>Alumnos</span>
+                </Link>
+              </li>
+              <li className={styles.navItem}>
+                <Link
+                  to={"/admin/register-teacher"}
+                  className={
+                    isActive("/admin/register-teacher") ? styles.activeLink : styles.link
+                  }
+                >
+                  <i>
+                    <IconEyeglass2 size={22} />
+                  </i>
+                  <span>Maestros</span>
+                </Link>
+              </li>
             </>
           )}
         </ul>
@@ -278,36 +306,33 @@ export const Aside = () => {
           </li>
 
           <li className={styles.navItem}>
-            {(isEstudiante || isMaestro) && (
-              <Link
-                to="/login"
-                onClick={() => {
-                  localStorage.removeItem("token");
-                  localStorage.removeItem("rol");
-                }}
-                className={styles.link}
-              >
-                <i>
-                  <IconLogout size={22} />
-                </i>
-                <span>Cerrar Sesión</span>
-              </Link>
-            )}
-            {isAdmin && (
-              <Link
-                to="/admin/login"
-                onClick={() => {
-                  localStorage.removeItem("token");
-                  localStorage.removeItem("rol");
-                }}
-                className={styles.link}
-              >
-                <i>
-                  <IconLogout size={22} />
-                </i>
-                <span>Cerrar Sesión</span>
-              </Link>
-            )}
+            <button
+              onClick={async () => {
+                const sessionId = localStorage.getItem("sessionId");
+                const userId = localStorage.getItem("userId");
+
+                if (sessionId && userId) {
+                  try {
+                    await ApiAuthLogOut(Number(sessionId), Number(userId));
+                  } catch (error) {
+                    console.error("Error al cerrar sesión:", error);
+                  }
+                }
+
+                localStorage.removeItem("token");
+                localStorage.removeItem("sessionId");
+                localStorage.removeItem("userId");
+                localStorage.removeItem("rol");
+              
+                window.location.href = isAdmin ? "/admin/login" : "/login";
+              }}
+              className={styles.link}
+            >
+              <i>
+                <IconLogout size={22} />
+              </i>
+              <span>Cerrar Sesión</span>
+            </button>
           </li>
         </ul>
       </nav>

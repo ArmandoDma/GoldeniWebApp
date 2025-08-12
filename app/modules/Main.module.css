@@ -146,12 +146,14 @@
     display: inline-flex;
     font-size: 15px;
     align-items: center;
+    background-color: transparent;
     justify-content: flex-start;
     color: #000;
     white-space: nowrap;
     border: 1px solid transparent;
     text-decoration: none;
     padding: 8px;
+    font-family: inherit;
     margin-bottom: 10px;
     transition: all 0.2s ease;
     border-radius: 5px;

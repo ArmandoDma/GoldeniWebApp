@@ -40,6 +40,7 @@ export default function LayoutAdmin() {
         </div>
         <Aside />
         <main className={styles.root}>
+          
           <Outlet />
         </main>
       </div>

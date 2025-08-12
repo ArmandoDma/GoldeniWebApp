@@ -2,6 +2,7 @@ import Authenticated from "~/Components/Authenticated";
 import styles from "../modules/LayoutAdmin.module.css";
 import type { Route } from "../+types/root";
 import { LoginAdmins } from "~/Components/LoginAdminForm";
+import { Link } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -19,13 +20,13 @@ const LoginAdmin = () => {
             <nav className={styles.nHdr}>
               <ul className={styles.iz}>
                 <li>
-                  <a href="index.html">
+                  <Link to={"/admin/login"}>
                     <img src="/favicon.svg" alt="" />
                     <span>
                       <p>GOLDENI</p>
                       <p>Private College</p>
                     </span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className={styles.dr}>

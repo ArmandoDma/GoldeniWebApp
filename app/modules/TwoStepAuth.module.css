@@ -1,0 +1,106 @@
+.twoStepAuth {
+  width: 100%;
+  margin: auto;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.methodList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.method {
+  background: #f9f9f9;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.method .info {
+  flex: 1;
+}
+
+.method h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.method p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Toggle switch */
+.toggle {
+  position: relative;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle label {
+  display: block;
+  width: 42px;
+  height: 22px;
+  background: #ccc;
+  border-radius: 22px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle label::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle input:checked + label {
+  background: #4caf50;
+}
+
+.toggle input:checked + label::after {
+  transform: translateX(20px);
+}
+
+.toggle input:disabled + label {
+  background: #aaa;
+  cursor: not-allowed;
+}

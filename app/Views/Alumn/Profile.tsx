@@ -150,7 +150,7 @@ const Profile = () => {
           <div className={styles.itacc}>
             <h3>Opciones de inicio de sesión: </h3>
             <div className={styles.dtls}>
-              <button role="button" type="button">
+              <Link to={"/students/odis"} className={styles.button} role="button" type="button">
                 <span>
                   <i className="bx bxs-key">
                     <IconKey size={20} color="#000" />
@@ -160,7 +160,7 @@ const Profile = () => {
                   <p>Formas de inicio de sesión</p>
                   <p>Contraseña, PIN & QR.</p>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
 

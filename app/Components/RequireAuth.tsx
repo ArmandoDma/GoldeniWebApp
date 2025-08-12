@@ -74,7 +74,7 @@ const RequireAuth = ({
         redirectPath = "/students/portal";
         break;
       case "2":
-      case "Docente":
+      case "Maestro":
         redirectPath = "/teachers/portal";
         break;
       case "3":
