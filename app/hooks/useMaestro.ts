@@ -15,7 +15,7 @@ export interface Maestro {
   idEstado?: number;
   especialidad: string;
   idTurno?: number;
-  estadoMaestro?: boolean;
+  estadoMaestro?: string;
 }
 
 const API_URL = "http://localhost:5270/api/maestro";
@@ -57,6 +57,7 @@ export const useMaestro = () => {
     setLoading(true);
     setError(null);
     try {
+      console.log("Payload maestro:", maestro);
       const response = await axios.post(API_URL, maestro, {
         headers: { Authorization: `Bearer ${token}` },
       });

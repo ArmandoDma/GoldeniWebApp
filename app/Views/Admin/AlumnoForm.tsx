@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useAlumno, type Alumno } from "~/hooks/useAlumno";
 import styles from "../../modules/AlumnForm.module.css";
+import type { Route } from "../+types/LayoutAdmin";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Goldeni - Admin Portal" },
+    { name: "description", content: "Panel de administración de Goldeni." },   
+  ];
+}
 
 interface Props {
   editarMatricula?: string;
